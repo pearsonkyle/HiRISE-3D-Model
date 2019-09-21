@@ -1,7 +1,12 @@
 ## HiRISE 3D Model Maker
-Create 3D models (.obj, .glb, etc.) from terrain maps using a python script in Blender. Interact with the models through the web or mobile using [Google Poly](https://poly.google.com/user/2E_yxXvhmYl)
-
+Create 3D models (.obj, .glb, etc.) from terrain maps using a python script in Blender. 
 ![](figures/MSL_site.gif)
+
+
+Interact with the models through the web or mobile using [Google Poly](https://poly.google.com/user/2E_yxXvhmYl)
+![](figures/poly_viewer.gif)
+
+A library of HiRISE 3D models can be found here: [https://poly.google.com/user/2E_yxXvhmYl](https://poly.google.com/user/2E_yxXvhmYl)
 
 ## Requirements
 - Blender 
@@ -66,7 +71,7 @@ Use this little script to remove text from the original images before creating a
 
 ## Creating a 3D model
 
-1. Run the script [blender_terrain.py](blender_terrain.py) within blender after downloading the data. 
+1. Run the script [blender_terrain.py](blender_terrain.py) from within blender after downloading the data. 
 
 2. Export model to .glb
 
