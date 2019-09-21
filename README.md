@@ -64,7 +64,7 @@ Use this little script to remove text from the original images before creating a
 
 ![](dtm_comparison.jpg)
 
-## Create a 3D model in Blender
+## Creating a 3D model
 
 1. Run the script [blender_terrain.py](blender_terrain.py) within blender after downloading the data. 
 
