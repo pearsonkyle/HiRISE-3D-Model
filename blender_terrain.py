@@ -41,10 +41,12 @@ def create_landscape(zdata, dsize):
                 z = zdata[subdiv-row-1, col]*zsize
             verts.append((x,y,z))
     return verts, faces
-    
-cdata = imread("C:\\Users\\Kyle\\Documents\\Unity Projects\\SPH_Visualization\\Assets\\Python\\Data-VisualizAR\\blender\\DTEEC_051084_1875_050939_1875_A01.ca.jpg")
-data = imread("C:\\Users\\Kyle\\Documents\\Unity Projects\\SPH_Visualization\\Assets\\Python\\Data-VisualizAR\\blender\\DTEEC_051084_1875_050939_1875_A01.ca.jpg",as_gray=True)
-data2 = imread("C:\\Users\\Kyle\\Documents\\Unity Projects\\SPH_Visualization\\Assets\\Python\\Data-VisualizAR\\blender\\DTEEC_051084_1875_050939_1875_A01.ab.jpg",as_gray=True)
+
+prefix = "DTEEC_016004_1425_006906_1425_A01"
+
+cdata = imread("C:\\Users\Kyle\\Programs\\github\\HiRISE-3D-Model\\data\\{}.ca.jpg".format(prefix))
+data = imread("C:\\Users\Kyle\\Programs\\github\\HiRISE-3D-Model\\data\\{}.ca.jpg".format(prefix),as_gray=True)
+data2 = imread("C:\\Users\Kyle\\Programs\\github\\HiRISE-3D-Model\\data\\{}.ab.jpg".format(prefix),as_gray=True)
 
 labels, features = ndimage.label(255*data>10)
 group_size = []
@@ -69,7 +71,7 @@ ds = (np.array(alt.shape)/10.).astype(int)
 dds = (max(ds), max(ds))
 dalt = resize(alt,dds)
 
-verts, faces = create_landscape(dalt, (ds[1]/10.,ds[0]/10., 38.3/10.) ) 
+verts, faces = create_landscape(dalt, (ds[1]/10.,ds[0]/10., 886/100.) ) 
 edges = []
 
 # Create new mesh
@@ -103,7 +105,7 @@ def material_for_texture(fname):
     return mat
 
 obj = bpy.data.objects['Landscape']
-mat = material_for_texture("C:\\Users\\Kyle\\Documents\\Unity Projects\\SPH_Visualization\\Assets\\Python\\Data-VisualizAR\\blender\\DTEEC_051084_1875_050939_1875_A01.ca.jpg")
+mat = material_for_texture("C:\\Users\Kyle\\Programs\\github\\HiRISE-3D-Model\\data\\{}.ca.jpg".format(prefix))
 
 if len(obj.data.materials)<1:
     obj.data.materials.append(mat)
