@@ -42,7 +42,7 @@ def create_landscape(zdata, dsize):
             verts.append((x,y,z))
     return verts, faces
 
-prefix = "DTEEC_016004_1425_006906_1425_A01"
+prefix = "DTEEC_023524_1985_023379_1985_U01"
 
 cdata = imread("C:\\Users\Kyle\\Programs\\github\\HiRISE-3D-Model\\data\\{}.ca.jpg".format(prefix))
 data = imread("C:\\Users\Kyle\\Programs\\github\\HiRISE-3D-Model\\data\\{}.ca.jpg".format(prefix),as_gray=True)
@@ -71,7 +71,7 @@ ds = (np.array(alt.shape)/10.).astype(int)
 dds = (max(ds), max(ds))
 dalt = resize(alt,dds)
 
-verts, faces = create_landscape(dalt, (ds[1]/10.,ds[0]/10., 886/100.) ) 
+verts, faces = create_landscape(dalt, (ds[1]/10.,ds[0]/10., 185/100.) ) 
 edges = []
 
 # Create new mesh
